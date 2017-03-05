@@ -120,6 +120,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billValue" destination="alS-cc-dbl" id="nsb-xB-3Px"/>
+                        <outlet property="bottomSection" destination="JqU-iC-YPQ" id="R9b-3Q-2ZQ"/>
                         <outlet property="percentageSelection" destination="q6C-yx-Opp" id="pFp-k2-cmL"/>
                         <outlet property="tipLabel" destination="YKy-sD-iLB" id="XKg-rN-C5S"/>
                         <outlet property="tipPercentageValue" destination="rIt-tB-khy" id="pLq-ne-dK7"/>

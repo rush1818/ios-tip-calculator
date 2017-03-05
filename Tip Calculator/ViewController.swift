@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var percentageSelection: UISegmentedControl!
     @IBOutlet weak var tipPercentageValue: UITextField!
     
+    @IBOutlet weak var bottomSection: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
