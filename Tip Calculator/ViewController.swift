@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         
         print(intValue)
         tipPercentageValue.text = "\(intValue)"
+        
+        bottomSection.alpha = 0
 
     }
 
@@ -40,14 +42,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func updateTipPercentageValue(_ sender: AnyObject) {
-        print("in update %")
+        
         let tipPercentages = [18, 20, 25]
         tipPercentageValue.text = "\(tipPercentages[percentageSelection.selectedSegmentIndex])"
         self.calculateTip(sender)
     }
     
+    
     @IBAction func calculateTip(_ sender: AnyObject) {
-        print("in calculate tip")
+        
         let bill = Double(billValue.text!) ?? 00
         
         let tip = bill * (Double(tipPercentageValue.text!) ?? 0) / 100
@@ -56,7 +59,11 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
         
-        
+        UIView.animate(withDuration: 0.7, delay: 0.1, options: UIViewAnimationOptions.transitionCurlUp,  animations: {
+            
+            self.bottomSection.alpha = 1
+            
+        })
     }
 }
 
