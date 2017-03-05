@@ -22,9 +22,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let defaults = UserDefaults.standard
-        let intValue = defaults.integer(forKey: "default_tip_percentage") ?? 18;
+        var intValue = defaults.integer(forKey: "default_tip_percentage");
         
         print(intValue)
+        if intValue == 0 {
+            intValue = 18
+            defaults.set(intValue, forKey: "default_tip_percentage")
+            defaults.synchronize()
+        }
         tipPercentageValue.text = "\(intValue)"
         
         bottomSection.alpha = 0

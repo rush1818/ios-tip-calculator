@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let defaults = UserDefaults.standard
-        var intValue = defaults.integer(forKey: "default_tip_percentage") ?? 18;
+        let intValue = defaults.integer(forKey: "default_tip_percentage");
         
         
         defaultTipPercentage.text = "\(intValue)"
@@ -34,8 +34,8 @@ class SettingsViewController: UIViewController {
 
     @IBAction func updateDefaultTipPercentage(_ sender: Any) {
         let defaults = UserDefaults.standard
-        let value = Double(defaultTipPercentage.text!) ?? 18
-        defaults.set(Int(value), forKey: "default_tip_percentage")
+        let value = Double(defaultTipPercentage.text!)
+        defaults.set(Int(value!), forKey: "default_tip_percentage")
         defaults.synchronize()
     }
     /*
